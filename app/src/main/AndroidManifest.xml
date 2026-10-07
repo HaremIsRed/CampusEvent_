@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:label="Campus Event Registration App"
+        android:theme="@style/Theme.CampusEvent"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ConfirmationActivity"
+            android:exported="false"
+            android:parentActivityName=".RegistrationActivity" />
+
+        <activity
+            android:name=".RegistrationListActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <provider
+            android:name=".CampusEventProvider"
+            android:authorities="com.example.campusevent.provider"
+            android:exported="false" />
+
+    </application>
+</manifest>
